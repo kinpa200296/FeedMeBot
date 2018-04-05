@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using FeedMeBot.Logic;
+using System.Configuration;
 
 namespace FeedMeBot.Dialogs
 {
@@ -34,7 +35,11 @@ namespace FeedMeBot.Dialogs
                 return;
             }
 
-            IMessageAnalyzer analyzer = new LuisMessageAnalyzer();
+            IMessageAnalyzer analyzer = new LuisMessageAnalyzer(
+                ConfigurationManager.AppSettings["LuisAppId"],
+                ConfigurationManager.AppSettings["LuisApiKey"],
+                ConfigurationManager.AppSettings["LuisHostName"]);
+
             var response = await analyzer.GetResponse(activity.Text, _currentOrder);
 
             await context.PostAsync(response);

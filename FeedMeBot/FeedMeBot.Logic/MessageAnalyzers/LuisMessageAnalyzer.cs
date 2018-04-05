@@ -1,4 +1,5 @@
-﻿using Microsoft.Bot.Builder.Luis.Models;
+﻿using Microsoft.Bot.Builder.Luis;
+using Microsoft.Bot.Builder.Luis.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -6,32 +7,28 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace FeedMeBot.Logic
 {
     public class LuisMessageAnalyzer : IMessageAnalyzer
     {
-        private const string EndpointUrl = @"luis url";
+        private LuisService _luisService;
 
 
-        private static string RequestUrlFormat = $@"{EndpointUrl}{{0}}";
+        public LuisMessageAnalyzer(string appId, string apiKey, string hostname)
+        {
+            _luisService = new LuisService(new LuisModelAttribute(appId, apiKey, domain: hostname));
+        }
 
 
         public async Task<string> GetResponse(string message, Order currentOrder)
         {
             try
             {
-                var requestUrl = string.Format(RequestUrlFormat, message);
-                var request = (HttpWebRequest)WebRequest.Create(requestUrl);
-                var response = await request.GetResponseAsync();
-                var json = "";
-                using (var stream = new StreamReader(response.GetResponseStream()))
-                {
-                    json = stream.ReadToEnd();
-                }
-                var res = JsonConvert.DeserializeObject<LuisResult>(json);
-
+                var request = new LuisRequest(message);
+                var res = await _luisService.QueryAsync(request, CancellationToken.None);
                 return HandleResult(res, currentOrder);
             }
             catch (Exception ex)
@@ -89,7 +86,7 @@ namespace FeedMeBot.Logic
 
         private string HandleNoneRu()
         {
-            return "Моя твоя не понимать.";
+            return "Я не могу понять ваш запрос";
         }
 
         private string HandleGreetingEn()
@@ -99,7 +96,7 @@ namespace FeedMeBot.Logic
 
         private string HandleGreetingRu()
         {
-            return "Трям, что будете заказывать?";
+            return "Доброго времени суток, что будете заказывать?";
         }
 
         private string HandleShowMenuEn()
