@@ -48,21 +48,21 @@ namespace FeedMeBot.Logic
                 case "None.Ru":
                     return HandleNoneRu();
                 case "Greeting.En":
-                    return score > 0.7 ? HandleGreetingEn() : HandleNoneEn();
+                    return score > 0.8 ? HandleGreetingEn() : HandleNoneEn();
                 case "Greeting.Ru":
-                    return score > 0.6 ? HandleGreetingRu() : HandleNoneRu();
+                    return score > 0.8 ? HandleGreetingRu() : HandleNoneRu();
                 case "ShowMenu.En":
                     return score > 0.8 ? HandleShowMenuEn() : HandleNoneEn();
                 case "ShowMenu.Ru":
-                    return score > 0.6 ? HandleShowMenuRu() : HandleNoneRu();
+                    return score > 0.8 ? HandleShowMenuRu() : HandleNoneRu();
                 case "ShowOrder.En":
                     return score > 0.8 ? HandleShowOrderEn(currentOrder) : HandleNoneEn();
                 case "ShowOrder.Ru":
-                    return score > 0.7 ? HandleShowOrderRu(currentOrder) : HandleNoneRu();
+                    return score > 0.8 ? HandleShowOrderRu(currentOrder) : HandleNoneRu();
                 case "Checkout.En":
                     return score > 0.8 ? HandleCheckoutEn(currentOrder) : HandleNoneEn();
                 case "Checkout.Ru":
-                    return score > 0.6 ? HandleCheckoutRu(currentOrder) : HandleNoneRu();
+                    return score > 0.8 ? HandleCheckoutRu(currentOrder) : HandleNoneRu();
                 case "Order.En":
                     return score > 0.8 ? HandleOrderEn(result, currentOrder) : HandleNoneEn();
                 case "Order.Ru":
@@ -117,7 +117,7 @@ namespace FeedMeBot.Logic
                 sb.AppendLine("Your order:");
                 foreach (var dish in currentOrder.Dishes)
                 {
-                    sb.AppendLine(dish.ToString());
+                    sb.AppendLine($"{dish};");
                 }
             }
             else
@@ -135,7 +135,7 @@ namespace FeedMeBot.Logic
                 sb.AppendLine("Ваш заказ:");
                 foreach (var dish in currentOrder.Dishes)
                 {
-                    sb.AppendLine(dish.ToString());
+                    sb.AppendLine($"{dish};");
                 }
             }
             else
