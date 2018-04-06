@@ -1,0 +1,4077 @@
+{
+  "luis_schema_version": "2.2.0",
+  "versionId": "0.31",
+  "name": "FoodAI",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Checkout.En"
+    },
+    {
+      "name": "Checkout.Ru"
+    },
+    {
+      "name": "Greeting.En"
+    },
+    {
+      "name": "Greeting.Ru"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "None.Ru"
+    },
+    {
+      "name": "Order.En"
+    },
+    {
+      "name": "Order.Ru"
+    },
+    {
+      "name": "ShowMenu.En"
+    },
+    {
+      "name": "ShowMenu.Ru"
+    },
+    {
+      "name": "ShowOrder.En"
+    },
+    {
+      "name": "ShowOrder.Ru"
+    }
+  ],
+  "entities": [
+    {
+      "name": "DishBase"
+    },
+    {
+      "name": "DishFilling"
+    }
+  ],
+  "composites": [
+    {
+      "name": "CompositeDish",
+      "children": [
+        "DishFilling",
+        "DishBase"
+      ]
+    }
+  ],
+  "closedLists": [],
+  "regex_entities": [],
+  "bing_entities": [],
+  "model_features": [
+    {
+      "name": "DishBase.En",
+      "mode": false,
+      "words": "pancake,pancakes",
+      "activated": true
+    },
+    {
+      "name": "DishBase.Ru",
+      "mode": false,
+      "words": "блин,блина,блинов",
+      "activated": true
+    },
+    {
+      "name": "DishFilling.En",
+      "mode": false,
+      "words": "mustard,ketchup,mayo,cheese,caviar,jam,crab sticks,crabsticks,pineapple",
+      "activated": true
+    },
+    {
+      "name": "DishFilling.Ru",
+      "mode": false,
+      "words": "горчица,горчицей,кетчуп,кетчупом,майонез,майонезом,сыр,сыром,икра,икрой,варенье,вареньем,сгущенка,сгущенкой,крабовые палочки,крабовыми палочками,ананас,ананасом",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "1 блин с ананасом и сгущенкой",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 2,
+          "endPos": 5
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 2,
+          "endPos": 28
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 9,
+          "endPos": 16
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 20,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "1 блин с сыром",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 2,
+          "endPos": 5
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 2,
+          "endPos": 13
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 9,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "3 блина с ветчиной и кетчупом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "CompositeDish",
+          "startPos": 2,
+          "endPos": 28
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 10,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "bill",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "bill, please",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "checkout",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "current order",
+      "intent": "ShowOrder.En",
+      "entities": []
+    },
+    {
+      "text": "eat",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "enough",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "enough for me",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "feed me",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "finish order",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "finish up",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "food",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "give me pancakes with ham mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 8,
+          "endPos": 15
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 8,
+          "endPos": 29
+        },
+        {
+          "entity": "DishBase",
+          "startPos": 22,
+          "endPos": 24
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 26,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "give me some food",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "good afternoon",
+      "intent": "Greeting.En",
+      "entities": []
+    },
+    {
+      "text": "good evening",
+      "intent": "Greeting.En",
+      "entities": []
+    },
+    {
+      "text": "good morning",
+      "intent": "Greeting.En",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting.En",
+      "entities": []
+    },
+    {
+      "text": "help",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting.En",
+      "entities": []
+    },
+    {
+      "text": "how are you",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i am hungry",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "i don't know",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "i get off of work at 6",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i have a headache",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i like her",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i love you",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want a snack",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "i want pancakes with ham",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 7,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "i want pancakes with ham and mustard",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 7,
+          "endPos": 35
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 29,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "i would like to try something",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "i'm cold",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "menu, please",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "my order",
+      "intent": "ShowOrder.En",
+      "entities": []
+    },
+    {
+      "text": "offers",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "order",
+      "intent": "ShowOrder.En",
+      "entities": []
+    },
+    {
+      "text": "pancake and cheese ham",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 12,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 19,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "pancake and crab sticks with cheese",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 34
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 12,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 29,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "pancake and ham",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "pancake cheese",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 13
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "pancake cheese ketchup",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 13
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 15,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "pancake crab sticks, cheese and mushrooms",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 40
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 18
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 26
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 32,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "pancake ham and ketchup",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "pancake ham cheese and crab sticks",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 33
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 12,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 23,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "pancake ham cheese and ketchup",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 29
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 12,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 23,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "pancake ham cheese ketchup mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 30
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 12,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 19,
+          "endPos": 25
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 27,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "pancake ham cheese mustard",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 25
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 12,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 19,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "pancake ham cheese with mushrooms",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 32
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 12,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "pancake ham cheese, mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 12,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 20,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "pancake ham with cheese and mushrooms",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 36
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 28,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "pancake ham with cheese with mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 32
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 29,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "pancake ham with cheesee, mustard",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 32
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 26,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "pancake ham, cheese, ketchup and mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 36
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 18
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 27
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 33,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "pancake ham, cheese, ketchup, mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 33
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 10
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 18
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 27
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 30,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "pancake with cheese and ketchup",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 30
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 18
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "pancake with cheese mushrooms ketchup",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 36
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 18
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 20,
+          "endPos": 28
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 30,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "pancake with cheese, please",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 18
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "pancake with crab sticks, mushrooms with ketchup",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 47
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 26,
+          "endPos": 34
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 41,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "pancake with crab sticks, mushrooms, mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 40
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 26,
+          "endPos": 34
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 37,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "pancake with ham cheese ketchup mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 35
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 30
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 32,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "pancake with ham, cheese and mushrooms",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 37
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 18,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 29,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "pancake with ham, cheese, ketchup and mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 41
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 18,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 26,
+          "endPos": 32
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 38,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "pancake with ham, cheese, ketchup, mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 38
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 18,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 26,
+          "endPos": 32
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 35,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "pancake with ham, mushrooms, mayo and cheese",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 43
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 18,
+          "endPos": 26
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 29,
+          "endPos": 32
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 38,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "pancake, cheese and ketchup",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 26
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 9,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 20,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "pancake, ham, mustard",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 20
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 9,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "pancakes and mushrooms and ham",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 29
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 27,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "pancakes and pineapple, jam",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 26
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "pancakes crab sticks, mushrooms",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 30
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 9,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 22,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "pancakes mushrooms with pineapple",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 32
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 9,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "pancakes with cheese and mushrooms and ketchup",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 45
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 25,
+          "endPos": 33
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 39,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "pancakes with cheese and mushrooms with ham",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 42
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 25,
+          "endPos": 33
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 40,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "pancakes with cheese and mushrooms, mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 39
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 25,
+          "endPos": 33
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 36,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "pancakes with cheese mushrooms and crab sticks",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 45
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 29
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 35,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "pancakes with cheese mushrooms with mayo",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 39
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 29
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 36,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "pancakes with cheese mushrooms, ketchup",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 38
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 29
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 32,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "pancakes with crab sticks",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 24
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "pancakes with ham mushrooms",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 26
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 16
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 18,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "pancakes with ham, cheese with mustard",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 37
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 16
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 19,
+          "endPos": 24
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 31,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "pancakes with ham, cheese, crab sticks",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 37
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 16
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 19,
+          "endPos": 24
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 27,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "pancakes with ham, mustard",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 25
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 16
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 19,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "pancakes with pineapple with jam",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 31
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 29,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "pancakes, crab sticks with cheese",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 32
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 10,
+          "endPos": 20
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 27,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "pancakes, ham cheese",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 10,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "pancakes, mushrooms",
+      "intent": "Order.En",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 18
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 10,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "pay",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "pay for order",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "pay order",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "payment",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "pizza",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please write it down",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "receipt",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "she's pretty",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "shopping cart",
+      "intent": "ShowOrder.En",
+      "entities": []
+    },
+    {
+      "text": "show me my order",
+      "intent": "ShowOrder.En",
+      "entities": []
+    },
+    {
+      "text": "show menu",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "show my order",
+      "intent": "ShowOrder.En",
+      "entities": []
+    },
+    {
+      "text": "show options",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "show order",
+      "intent": "ShowOrder.En",
+      "entities": []
+    },
+    {
+      "text": "show price",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "show the menu",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "take it outside",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "that all",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "that it",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "that smells bad",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "that's all",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "that's it",
+      "intent": "Checkout.En",
+      "entities": []
+    },
+    {
+      "text": "the book is under the table",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are you doing",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what can you offer",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "what do you have",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "what have i ordered",
+      "intent": "ShowOrder.En",
+      "entities": []
+    },
+    {
+      "text": "what is in the cart",
+      "intent": "ShowOrder.En",
+      "entities": []
+    },
+    {
+      "text": "what options do you have",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "what options you have",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "what time is it?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what to do",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "where are you",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "yo",
+      "intent": "Greeting.En",
+      "entities": []
+    },
+    {
+      "text": "your offer",
+      "intent": "ShowMenu.En",
+      "entities": []
+    },
+    {
+      "text": "your things are all here",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "блин ветчина и крабовые палочки",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 30
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 15,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "блин ветчина майонез",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "блин ветчина с сыром",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "блин ветчина сыр кетчуп",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "блин ветчина сыр кетчуп майонез",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 30
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "блин ветчина, грибы и крабовые палочки",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 37
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 18
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 22,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "блин ветчина, грибы с кетчупом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 29
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 18
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 22,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "блин ветчина, грибы, горчица",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 27
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 18
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "блин ветчина, сыр, кетчуп и майонез",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 34
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 16
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 19,
+          "endPos": 24
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 28,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "блин ветчина, сыр, кетчуп, майонез",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 33
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 16
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 19,
+          "endPos": 24
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 27,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "блин и ананас, сгущенка",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 15,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "блин и грибы с крабовыми палочками",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 33
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 15,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "блин и крабовые палочки",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "блин и сыр и майонез",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 9
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "блин с ветчиной грибами майонезом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 32
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 16,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "блин с ветчиной сыром кетчупом майонезом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 39
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 16,
+          "endPos": 20
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 22,
+          "endPos": 29
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 31,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "блин с ветчиной, крабовыми палочками грибами",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 43
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 35
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 37,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "блин с ветчиной, крабовыми палочками и майонезом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 47
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 35
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 39,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "блин с ветчиной, крабовыми палочками с кетчупом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 46
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 35
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 39,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "блин с ветчиной, крабовыми палочками, сыром",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 42
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 35
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 38,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "блин с ветчиной, майонезом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 25
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "блин с ветчиной, сыром, кетчупом и майонезом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 43
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 31
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 35,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "блин с ветчиной, сыром, кетчупом, майонезом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 42
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 31
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 34,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "блин с крабовыми палочками",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 25
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "Блин с сыром",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "блин с сыром и грибами",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 15,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "блин с сыром с ветчиной",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 22
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 15,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "блин с сыром, ветчиной, кетчупом и майонезом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 43
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 7,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 31
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 35,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "блин сыр",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 7
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "блин сыр ветчина варенье",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 9,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "блин сыр ветчина и грибы",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 9,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "блин сыр ветчина с майонезом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 27
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 9,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 19,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "блин сыр ветчина, горчица",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 24
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 9,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 18,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "блин сыр с грибами и кетчупом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 28
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 11,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "блин сыр с грибами с майонезом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 29
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 11,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 21,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "блин сыр с грибами, ветчиной",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 27
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 11,
+          "endPos": 17
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "блин сыр, ветчина, кетчуп, майонез",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 33
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 10,
+          "endPos": 16
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 19,
+          "endPos": 24
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 27,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "блин, ветчина",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 6,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "блин, ветчина и грибы",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 20
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 6,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 16,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "блин, кетчуп с майонезом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 6,
+          "endPos": 11
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 15,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "блин, крабовые палочки, сыр",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 26
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 6,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "блин, сыр ветчина",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 16
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 6,
+          "endPos": 8
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 10,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "блина с ветчиной грибами",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 15
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "блины ветчина, грибы",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 19
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 6,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "блины и ветчина кетчуп",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 14
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 16,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "блины с сыром ветчиной и майонезом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 33
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 25,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "блины с сыром ветчиной кетчупом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 30
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 23,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "блины с сыром ветчиной с грибами",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 31
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 25,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "блины с сыром ветчиной, крабовыми палочками",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 42
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 24,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "блины с сыром и ветчиной горчицей",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 32
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 16,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 25,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "блины с сыром и ветчиной и крабовыми палочками",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 45
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 16,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 27,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "блины с сыром и ветчиной с кетчупом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 34
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 16,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 27,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "блины с сыром и ветчиной, кетчупом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 0,
+          "endPos": 33
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 8,
+          "endPos": 12
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 16,
+          "endPos": 23
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 26,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "ваши предложения",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "все",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "всё",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "все твои вещи здесь",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "вынеси это на улицу",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "где ты",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "дай мне блин со сгущенкой",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 8,
+          "endPos": 11
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 8,
+          "endPos": 24
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 16,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "дайте блин с ветчиной",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 6,
+          "endPos": 9
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 6,
+          "endPos": 20
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 13,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "дарова",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "деньги",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "добавь блин с сыром",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 7,
+          "endPos": 10
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 7,
+          "endPos": 18
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "добрейший вечерочек",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "доброго времени суток",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "доброе утро",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "добрый вечер",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "добрый день",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "достаточно",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "еды",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "едыыыы",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "завершить заказ",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "заказ",
+      "intent": "ShowOrder.Ru",
+      "entities": []
+    },
+    {
+      "text": "закончить",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "закончить заказ",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "здарова",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "здравствуйте",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "йоу",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "как дела",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "какие варианты",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "касса",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "книга лежит под столом",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "корзина",
+      "intent": "ShowOrder.Ru",
+      "entities": []
+    },
+    {
+      "text": "корзина покупок",
+      "intent": "ShowOrder.Ru",
+      "entities": []
+    },
+    {
+      "text": "который час,",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "меню",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "мне холодно",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "мой заказ",
+      "intent": "ShowOrder.Ru",
+      "entities": []
+    },
+    {
+      "text": "на кассу",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "она красивая",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "она мне нравится",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "оплата",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "оплата заказа",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "оплатить",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "пожалуйста, запиши это",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "покажи варианты",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "покажи заказ",
+      "intent": "ShowOrder.Ru",
+      "entities": []
+    },
+    {
+      "text": "покажи мне заказ",
+      "intent": "ShowOrder.Ru",
+      "entities": []
+    },
+    {
+      "text": "покажи мне мой заказ",
+      "intent": "ShowOrder.Ru",
+      "entities": []
+    },
+    {
+      "text": "покажите меню",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "покорми меня",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "помоги",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "предложения",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "привет",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "Привет",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "привет привет",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "стоимость",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "счет",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "счет, пожайлуста",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "текущий заказ",
+      "intent": "ShowOrder.Ru",
+      "entities": []
+    },
+    {
+      "text": "трям",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "Трям",
+      "intent": "Greeting.Ru",
+      "entities": []
+    },
+    {
+      "text": "у меня болит голова",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "хавчик",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "хватит",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "хочу есть",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "цена",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "чё по чем",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "чек",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "чем кормят",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "чем кормят?",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "чем сегодня кормят",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "что в корзине",
+      "intent": "ShowOrder.Ru",
+      "entities": []
+    },
+    {
+      "text": "что вы можете предложить",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "что вы предлагаете",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "что делаешь",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "что делать",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "что поесть",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "что похавать",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "что у вас есть",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "что я заказал",
+      "intent": "ShowOrder.Ru",
+      "entities": []
+    },
+    {
+      "text": "Это все",
+      "intent": "Checkout.Ru",
+      "entities": []
+    },
+    {
+      "text": "это плохо пахнет",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "я буду блин с ветчиной кетчупом",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 7,
+          "endPos": 10
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 7,
+          "endPos": 30
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 23,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "я бы хотел что-нибудь попробовать",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "я не знаю",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    },
+    {
+      "text": "я тебя люблю",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "я ухожу с работы в 6",
+      "intent": "None.Ru",
+      "entities": []
+    },
+    {
+      "text": "Я хочу блин с ветчиной",
+      "intent": "Order.Ru",
+      "entities": [
+        {
+          "entity": "DishBase",
+          "startPos": 7,
+          "endPos": 10
+        },
+        {
+          "entity": "CompositeDish",
+          "startPos": 7,
+          "endPos": 21
+        },
+        {
+          "entity": "DishFilling",
+          "startPos": 14,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "я хочу перекусить",
+      "intent": "ShowMenu.Ru",
+      "entities": []
+    }
+  ]
+}

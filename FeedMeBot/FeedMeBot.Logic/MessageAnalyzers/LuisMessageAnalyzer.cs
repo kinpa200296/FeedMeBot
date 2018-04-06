@@ -27,7 +27,11 @@ namespace FeedMeBot.Logic
         {
             try
             {
-                var request = new LuisRequest(message);
+                if (IsMessengerStartMessage(message))
+                {
+                    return HandleStart();
+                }
+                var request = new LuisRequest(message.ToLower());
                 var res = await _luisService.QueryAsync(request, CancellationToken.None);
                 return HandleResult(res, currentOrder);
             }
@@ -81,12 +85,12 @@ namespace FeedMeBot.Logic
 
         private string HandleNoneEn()
         {
-            return "I can't understand your request";
+            return "I can't understand your request. I can greet you, show menu, handle ordering a position from menu, show current order, take order payment";
         }
 
         private string HandleNoneRu()
         {
-            return "Я не могу понять ваш запрос";
+            return "Я не могу понять ваш запрос. Я могу поприветствовать вас, показать меню, офомить заказ на позицию из меню, показать текущий заказ, принять оплату заказа";
         }
 
         private string HandleGreetingEn()
@@ -225,6 +229,23 @@ namespace FeedMeBot.Logic
                 }
             }
             return dishes;
+        }
+
+        private bool IsMessengerStartMessage(string message)
+        {
+            switch (message)
+            {
+                case "/start": // Telegram case
+                    return true;
+
+                default:
+                    return false;
+            }
+        }
+
+        private string HandleStart()
+        {
+            return "Доброго времени суток, я могу поприветствовать вас, показать меню, офомить заказ на позицию из меню, показать текущий заказ, принять оплату заказа";
         }
     }
 }
